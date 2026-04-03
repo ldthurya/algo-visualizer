@@ -457,3 +457,165 @@ body {
 .hidden {
   display: none !important;
 }
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .app {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .tabs {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .tab {
+    padding: 6px 10px;
+    font-size: 12px;
+    flex: 1;
+    min-width: 70px;
+  }
+
+  /* Main layout - stack vertically */
+  .main {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  /* Left panel - becomes full width at top */
+  .left-panel {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 12px;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+
+  /* Right panel - full width */
+  .right-panel {
+    padding: 12px;
+    min-height: auto;
+  }
+
+  /* Input row - stack vertically */
+  .input-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .mode-toggle {
+    width: 100%;
+  }
+
+  .input-inline {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+  }
+
+  .input-label-inline {
+    white-space: normal;
+  }
+
+  .input-field-inline {
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Controls section */
+  .controls {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-buttons {
+    width: 100%;
+  }
+
+  .nav-buttons .btn {
+    flex: 1;
+  }
+
+  /* Table responsiveness */
+  .computation-table {
+    font-size: 12px;
+  }
+
+  .computation-table th,
+  .computation-table td {
+    padding: 6px 8px;
+  }
+
+  .col-num { width: 32px; }
+  .col-q1 { width: 40px; }
+  .col-count { width: 40px; }
+
+  /* Hide less important columns on very small screens */
+  @media (max-width: 480px) {
+    .col-num,
+    .col-count,
+    .col-condition {
+      font-size: 11px;
+    }
+
+    .computation-table th,
+    .computation-table td {
+      padding: 5px 6px;
+    }
+  }
+
+  .step-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .step-info-left {
+    width: 100%;
+  }
+
+  .step-meta {
+    align-self: flex-start;
+    font-size: 11px;
+  }
+
+  .panel-title {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .step-block {
+    padding: 10px;
+    margin-bottom: 8px;
+  }
+
+  .block-title {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+
+  .step-list li {
+    font-size: 11px;
+    padding: 2px 6px;
+  }
+}
