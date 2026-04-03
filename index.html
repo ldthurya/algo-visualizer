@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Algorithm Visualizer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app" class="app">
+    <!-- Header with Tabs -->
+    <header class="header">
+      <h1 class="title">Algorithm Visualizer</h1>
+      <div class="tabs">
+        <button class="tab active" data-algorithm="booth">Booth's</button>
+        <button class="tab" data-algorithm="modified-booth">Modified Booth's</button>
+        <button class="tab" data-algorithm="restoring">Restoring Division</button>
+        <button class="tab" data-algorithm="non-restoring">Non-Restoring Division</button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main">
+      <!-- Left Panel - Algorithm Steps -->
+      <aside class="left-panel">
+        <h2 class="panel-title">Algorithm Steps</h2>
+        
+        <!-- Initialization -->
+        <div id="init-block" class="step-block">
+          <h3 class="block-title">Initialization</h3>
+          <ul id="init-steps" class="step-list"></ul>
+        </div>
+
+        <!-- Loop Steps -->
+        <div class="step-block loop-block">
+          <h3 class="block-title">Loop / Iteration</h3>
+          <ul id="loop-steps" class="step-list"></ul>
+        </div>
+      </aside>
+
+      <!-- Right Panel - Execution -->
+      <main class="right-panel">
+        <!-- Inputs Row -->
+        <div class="input-row">
+          <div class="mode-toggle">
+            <button class="mode-btn" data-mode="binary">Binary</button>
+            <button class="mode-btn active" data-mode="decimal">Decimal</button>
+          </div>
+          <div class="input-inline">
+            <label id="label1" class="input-label-inline">Multiplicand (M)</label>
+            <input type="text" id="input1" class="input-field-inline" value="5" placeholder="5">
+            <span id="error1" class="input-error-inline"></span>
+          </div>
+          <div class="input-inline">
+            <label id="label2" class="input-label-inline">Multiplier (Q)</label>
+            <input type="text" id="input2" class="input-field-inline" value="3" placeholder="3">
+            <span id="error2" class="input-error-inline"></span>
+          </div>
+          <button id="start-btn" class="btn btn-primary">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            Start
+          </button>
+        </div>
+
+        <!-- Computation Table -->
+        <div class="table-container">
+          <div id="empty-state" class="empty-state">
+            <p class="empty-title">Ready to visualize</p>
+            <p class="empty-text">Enter your values and click Start to begin step-by-step visualization.</p>
+          </div>
+          <table id="computation-table" class="computation-table hidden">
+            <thead>
+              <tr>
+                <th class="col-num">#</th>
+                <th class="col-reg">A</th>
+                <th class="col-reg">Q</th>
+                <th id="col-q1" class="col-q1">Q-1</th>
+                <th class="col-reg">M</th>
+                <th class="col-count">Count</th>
+                <th class="col-condition">Condition</th>
+                <th class="col-operation">Operation</th>
+              </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </div>
+
+        <!-- Step Description & Controls -->
+        <div id="controls-section" class="controls-section hidden">
+          <div id="step-info" class="step-info"></div>
+          <div class="controls">
+            <div class="nav-buttons">
+              <button id="prev-btn" class="btn btn-outline" disabled>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                Prev
+              </button>
+              <button id="next-btn" class="btn btn-outline">
+                Next
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </div>
+            <button id="reset-btn" class="btn btn-outline">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+              Reset
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
